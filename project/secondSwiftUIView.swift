@@ -16,10 +16,15 @@ struct secondSwiftUIView: View {
     @State var savedstory = ""
     @Binding var storyHolderSecondView :String
    @State  var createCard = false
+    
+    
+    @Binding var cardsthatsave:Int
+    
+   
     var body: some View {
         
         ZStack {
-            Color.indigo.ignoresSafeArea()
+            Color.black.opacity(0.8).ignoresSafeArea()
             VStack {
                 
             
@@ -35,9 +40,11 @@ struct secondSwiftUIView: View {
                 }
               
                     
-                    TextEditor(text: $savedstory)
-                  
-                    .foregroundColor(.black)
+//                    TextEditor(text: $savedstory)
+                TextField("Write something", text: $savedstory)
+                    .foregroundColor(.black.opacity(0.8)).padding()
+                Text(savedstory)
+                    .foregroundColor(Color.init("g1"))
                         .padding()
                       
                 
@@ -56,17 +63,12 @@ struct secondSwiftUIView: View {
                     .shadow(color: .black, radius: 5)
                     .onTapGesture {
                         storyHolderSecondView=savedstory
-                            presentationMode.wrappedValue.dismiss()
+                           presentationMode.wrappedValue.dismiss()
                        
-                        createCard = true
+                        cardsthatsave += 1
                         
                     }
-                if createCard == true{
-                    
-                }
-                else{
-                    
-                }
+              
             }
         }
     }
@@ -74,6 +76,6 @@ struct secondSwiftUIView: View {
 
 struct secondSwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        secondSwiftUIView( storyHolderSecondView: .constant(""))
+        secondSwiftUIView( storyHolderSecondView: .constant(""), cardsthatsave: .constant(0))
     }
 }

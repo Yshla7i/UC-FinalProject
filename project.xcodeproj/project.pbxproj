@@ -13,7 +13,6 @@
 		F43BA774287B7A3900BEDCBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43BA773287B7A3900BEDCBA /* Preview Assets.xcassets */; };
 		F43BA781287BA56400BEDCBA /* secondSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43BA780287BA56300BEDCBA /* secondSwiftUIView.swift */; };
 		F4E9FE92287C98B4004B7B02 /* cardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9FE91287C98B4004B7B02 /* cardsView.swift */; };
-		F4E9FE94287C9CEC004B7B02 /* TitlesAndEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9FE93287C9CEC004B7B02 /* TitlesAndEmoji.swift */; };
 		F4E9FE96287CAC9E004B7B02 /* InsideCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9FE95287CAC9E004B7B02 /* InsideCards.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +24,6 @@
 		F43BA773287B7A3900BEDCBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F43BA780287BA56300BEDCBA /* secondSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondSwiftUIView.swift; sourceTree = "<group>"; };
 		F4E9FE91287C98B4004B7B02 /* cardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardsView.swift; sourceTree = "<group>"; };
-		F4E9FE93287C9CEC004B7B02 /* TitlesAndEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesAndEmoji.swift; sourceTree = "<group>"; };
 		F4E9FE95287CAC9E004B7B02 /* InsideCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 				F43BA780287BA56300BEDCBA /* secondSwiftUIView.swift */,
 				F4E9FE95287CAC9E004B7B02 /* InsideCards.swift */,
 				F4E9FE91287C98B4004B7B02 /* cardsView.swift */,
-				F4E9FE93287C9CEC004B7B02 /* TitlesAndEmoji.swift */,
 				F43BA770287B7A3900BEDCBA /* Assets.xcassets */,
 				F43BA772287B7A3900BEDCBA /* Preview Content */,
 			);
@@ -150,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43BA76F287B7A3600BEDCBA /* ContentView.swift in Sources */,
-				F4E9FE94287C9CEC004B7B02 /* TitlesAndEmoji.swift in Sources */,
 				F43BA781287BA56400BEDCBA /* secondSwiftUIView.swift in Sources */,
 				F4E9FE92287C98B4004B7B02 /* cardsView.swift in Sources */,
 				F43BA76D287B7A3600BEDCBA /* projectApp.swift in Sources */,
