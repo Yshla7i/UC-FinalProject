@@ -11,13 +11,13 @@ struct InsideCards: View {
     @Binding var presentThestory:String
     
     var body: some View {
-        let s = presentThestory
+     
         ZStack {
-            Color.black.opacity(0.8).ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             VStack {
                 HStack {
                  
-                    Text(s)
+                    Text(presentThestory)
                         .foregroundColor(Color("g2"))
                         .font(.system(size: 20))
                     .padding()

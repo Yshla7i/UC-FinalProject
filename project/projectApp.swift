@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct testApp: App {
+    @StateObject var cardInfo = CardInfo()
+     
     var body: some Scene {
         WindowGroup {
             ContentView( )
+                
+                .environmentObject(cardInfo)
+               
+            
         }
     }
 }

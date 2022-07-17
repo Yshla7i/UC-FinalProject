@@ -7,50 +7,69 @@
 
 import SwiftUI
 
+
+
+
+class CardInfo : ObservableObject {//########
+    
+    @Published var items = [String]()
+    
+}
+
+
 struct ContentView: View {
     @State var sheetclosed = false
     @State var storyHolder = ""
-
-   @State var cardIsClecked = false
-  @State var test=""
-   
-    @State var cardscounter:Int = 0
-
+    
+    @State var cardIsClecked = false
+    @State var test=""
+    
+    @EnvironmentObject var cardInfo : CardInfo//######
+    
+    
+    
+    
     var body: some View {
         
         NavigationView {
             
             ZStack {
-                            
-                Color.black.opacity(0.8).ignoresSafeArea()
+                
+                Color.white.ignoresSafeArea()
                 VStack{
                     
-               
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
-                      
-                            ForEach(0 ..< cardscounter, id: \.self) { item in
+                            //#########
+                            ForEach(cardInfo.items,id: \.self) { item in
+                                
                                 ZStack{
-                                 
                                     
-                                              RoundedRectangle(cornerRadius: 99).foregroundColor(Color.black.opacity(0.6))
-                                              Text("\(item + 1)")
-                                                  .font(.system(size: 40)
-                                                  )
+                                    
+                                    RoundedRectangle(cornerRadius: 99).foregroundColor(Color.black.opacity(0.6))
+                                    Text(item)
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 40)
+                                            
+                                        )
                                 }.frame(width: 220, height: 150)
                                     .onTapGesture {
-                                        cardIsClecked = true }
+                                        
+                                        cardIsClecked = true
+                                        storyHolder=item
+                                    }
                             }
-
-
-
-                                  .padding().background(Color("g2"))
-                                  .clipShape(RoundedRectangle(cornerRadius: 14))
-                                  .shadow(color: .green.opacity(100), radius:5).padding()
-                        
-                        NavigationLink("", destination: InsideCards(presentThestory: $storyHolder), isActive: $cardIsClecked)
+                            
+                            
+                            
+                            .padding().background(Color("g2"))
+                            .clipShape(RoundedRectangle(cornerRadius: 14))
+                            .shadow(color: .black.opacity(100), radius:5).padding()
+                            
+                            NavigationLink("", destination: InsideCards(presentThestory: $storyHolder), isActive: $cardIsClecked)
+                        }
                     }
-                }
                     
                     
                     Spacer()
@@ -64,26 +83,21 @@ struct ContentView: View {
                         } .font(.system(size: 40)).foregroundColor(.white).padding().background(Color.init("g2")
                         ).clipShape(Circle()).shadow(color: .black, radius: 3)
                             .sheet(isPresented: $sheetclosed, content:{
-                                secondSwiftUIView( storyHolderSecondView: $storyHolder, cardsthatsave: $cardscounter )
+                                secondSwiftUIView( storyHolderSecondView: $storyHolder)
                                 
                             }).padding()
                     }
-                   
-
                     
-//                    Text(storyHolder)
-//                        .frame(width: 280, height: 50)
-//                        .foregroundColor(.pink)
-//                        .cornerRadius(20)
-//                        .background(.white)
-//                        .padding()
-                  
-                   
+                    
+                    
+                    
+                    
+                    
                 }
             }
             
             .navigationTitle("Welcome")
-          
+            
         } .accentColor(Color("g2"))
         
     }
@@ -91,9 +105,9 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-   
+    
     static var previews: some View {
-       
+        
         ContentView()
     }
 }
